@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>TO DO LIST</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display">
+        <i id="add" class="fa-solid fa-plus"></i>
+        <div class="top_section">
+          <h1 class="logo">TO do list</h1>
+          <i id="settings" class="fa-solid fa-gear fa-xl"></i>
+        </div>
+        <div class="main_section">
+          <div class="main_section_header">
+            <div class="todos">
+              <i class="fa-solid fa-clipboard-list"></i>
+              <h2>todo`s</h2>
+            </div>
+            <i id="filter" class="fa-solid fa-filter"></i>
+          </div>
+          <div class="main_section_todos">
+            <div class="todoblock sec">
+              <div class="icons">
+                <i id="check" class="fa-solid fa-clipboard-check"></i>
+
+                <i id="delete" class="fa-solid fa-trash-can"></i>
+                <i id="time" class="fa-solid fa-clock"></i>
+              </div>
+
+              <h2 class="todo_name" title="Title">todo name</h2>
+              <p class="todo_desc" title="description">todo description</p>
+              <p class="created">created at</p>
+            </div>
+          </div>
+        </div>
+        <div class="add_todo_section trans_add">
+          <i id="close" class="fa-solid fa-square-xmark"></i>
+          <input type="text" id="title_add" placeholder="Title" />
+          <textarea
+            type="text"
+            id="des_add"
+            placeholder="Description"
+          ></textarea>
+          <button class="btn">ADD TODO</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,264 @@
+@import url(./reset.css);
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap");
+
+:root {
+  --primary: #f79e89;
+  --secondary: #f76c6a;
+  --ok: rgb(112, 212, 66);
+}
+
+/* COLORS */
+
+.prim {
+  border: 2px solid #f7892f;
+
+  /* background-color: ; */
+}
+
+.sec {
+  border: 2px solid #f76c6a;
+
+  /* background-color: #f76c6a; */
+}
+.green {
+  border: 2px solid green;
+  /* background-color: rgb(62, 177, 34); */
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  font-style: normal;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.display {
+  position: relative;
+  width: 400px;
+  height: 700px;
+  background-color: #fff;
+  box-shadow: 5px 5px 15px 0 rgba(58, 55, 55, 0.5);
+  padding: 24px;
+  border-radius: 10px;
+}
+
+/* ADD BUTTON */
+#add {
+  padding: 0 3px;
+  font-size: 50px;
+  color: #fff;
+  background-color: var(--secondary);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 5;
+  transition: background-color 250ms ease-in-out;
+}
+
+#add:hover {
+  background-color: #fff;
+  color: #f76c6a;
+  border: 1px solid #f76c6a;
+}
+
+/* TOP SECTION */
+
+.top_section {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: var(--primary);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#settings {
+  color: gray;
+  transition: transform 400ms ease-in;
+}
+#settings:hover {
+  transform: rotateZ(180deg);
+  color: rgb(95, 95, 95);
+}
+
+/* MAIN SECTON */
+
+.main_section_header {
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--secondary);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.main_section_header i {
+  /* font-size: 1rem; */
+  color: #f76c6ad2;
+}
+
+.todos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todos h2 {
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+
+#filter:hover {
+  color: #f76c6a;
+}
+
+/* MAIN SECTION TODOS */
+
+.main_section_todos {
+  overflow: auto;
+  height: 100%;
+  max-height: 443px;
+  /* margin-right: -15px; */
+}
+
+.main_section_todos::-webkit-scrollbar {
+  display: none;
+}
+
+/* .main_section_todos::-webkit-scrollbar-track {
+  background: red;
+} */
+
+.todoblock {
+  /* color: rgb(255, 254, 254); */
+  color: black;
+  width: 100%;
+  position: relative;
+  padding: 10px;
+  margin-bottom: 16px;
+  border-radius: 10px;
+}
+
+.icons {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+#delete,
+#time,
+#check {
+  font-size: 0.8rem;
+  color: rgb(71, 68, 68);
+  margin-left: 5px;
+}
+
+#delete:hover,
+#time:hover,
+#check:hover {
+  color: rgb(41, 40, 40);
+}
+
+.todo_name {
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.todo_desc {
+  font-size: 14px;
+  margin: 10px 0 20px;
+  height: 45px;
+  word-wrap: break-word;
+}
+
+.created {
+  font-size: 12px;
+}
+
+/* ADD TODO SECTION */
+
+.add_todo_section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 10px;
+  padding: 55px 24px;
+  z-index: 10;
+  transform-origin: 350px 650px;
+  transform: scale(0);
+  transition: transform 450ms ease-in;
+}
+
+#close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 24px;
+  color: #fff;
+}
+
+#close:hover {
+  color: #f76c6a;
+}
+
+.trans_add {
+  transform: scale(1);
+}
+
+.add_todo_section #title_add,
+#des_add {
+  width: 100%;
+  border: 2px solid #fff;
+  background-color: transparent;
+  padding: 10px 15px;
+  border-radius: 5px;
+  color: #fff;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+input::placeholder {
+  color: #fff;
+  /* text-align: start; */
+}
+
+#des_add {
+  color: #fff;
+  height: 80%;
+}
+
+#des_add::placeholder {
+  color: #fff;
+}
+
+.btn {
+  width: 100%;
+  color: #fff;
+  background-color: var(--primary);
+
+  border: 2px solid #fff;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  color: var(--primary);
+  background-color: #fff;
+}
+
+/* #title_add {
+    border: 2px solid red;
+    } */
