@@ -15,7 +15,7 @@ const createBtn = document.querySelector(".btn")
 
 
 const mainTodos = document.querySelector(".main_section_todos")
-// const todoHeader = document.querySelector(".todo_name")
+
 
 
 
@@ -29,7 +29,7 @@ closeSection.addEventListener("click", function(e){
     addSection.classList.remove("trans_add")
 })
 
-
+mainTodos.addEventListener("click", deleteClicked)
 
 
 
@@ -44,6 +44,7 @@ createBtn.addEventListener("click", function(e){
     // create todo block
     const divTodoBlock = document.createElement("div")
     divTodoBlock.classList.add("todoblock")
+    divTodoBlock.classList.add("normal")
 
     console.log(divTodoBlock)
 
@@ -111,6 +112,33 @@ createBtn.addEventListener("click", function(e){
 })
 
 
+
+
 // FUNCTIONS
 
 
+function deleteClicked(e){
+    console.log(e.target)
+    if(e.target.classList.contains("fa-trash-can")){
+        console.log(e.target.parentNode.parentNode)
+        e.target.parentNode.parentNode.remove()
+
+    }else if(e.target.classList.contains("fa-clipboard-check")){
+
+        console.log("check")
+        e.target.parentNode.parentNode.classList.toggle("green")
+        
+        if( !e.target.classList.contains("check")){
+            console.log("hello")
+            e.target.classList.add("check")
+            e.target.style.setProperty('--check', 'green');
+            e.target.parentNode.nextElementSibling.style.color = "green"
+        }else {
+            console.log("not")
+            e.target.classList.remove("check")
+            e.target.style.setProperty('--check', 'rgb(71, 68, 68)');
+            e.target.parentNode.nextElementSibling.style.color = "black"
+        }
+        
+    }
+}

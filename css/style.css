@@ -5,12 +5,13 @@
   --primary: #f79e89;
   --secondary: #f76c6a;
   --ok: rgb(112, 212, 66);
+  --check: rgb(71, 68, 68);
 }
 
 /* COLORS */
 
 .normal {
-  border: 2px solid #d9c9bd;
+  border: 2px solid rgb(71, 68, 68);
 
   /* background-color: ; */
 }
@@ -22,7 +23,10 @@
 }
 .green {
   border: 2px solid green;
-  /* background-color: rgb(62, 177, 34); */
+  border-color: green;
+}
+
+.check {
 }
 
 body {
@@ -144,7 +148,7 @@ body {
   padding: 10px;
   margin-bottom: 16px;
   border-radius: 10px;
-  border: 2px black solid;
+  /* border: 2px black solid; */
 }
 
 .icons {
@@ -154,13 +158,25 @@ body {
 }
 
 i {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgb(71, 68, 68);
   margin-left: 5px;
+  cursor: pointer;
 }
 
 i:hover {
   color: rgb(41, 40, 40);
+}
+
+.fa-clipboard-list {
+  cursor: default;
+}
+.fa-clipboard-list:hover {
+  color: var(--secondary);
+}
+
+.fa-clipboard-check:before {
+  color: var(--check);
 }
 
 .todo_name {
