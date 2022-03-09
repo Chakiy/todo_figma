@@ -7,15 +7,19 @@ const close = document.querySelector("#close")
 add.addEventListener("click", function(e){
     addSection.classList.toggle("trans_add")
 
+
+    icons.forEach(icon => {
+        if (!icon.classList.contains("display_none")){
+            console.log("dont have")
+            icon.classList.toggl("display_none")
+        }
+        
+    })
 })
 
 close.addEventListener("click", function(e){
     addSection.classList.toggle("trans_add")
-
-
 })
-
-
 
 
 // add to do section
@@ -26,41 +30,56 @@ const addDesc = document.querySelector("#des_add")
 const btn = document.querySelector(".btn")
 
 
+
+const todoHeader = document.querySelector(".todo_name")
+
+
 let mainTodos = document.querySelector(".main_section_todos")
 
 
-const todoblock = document.querySelector(".todoblock")
+let icons = []
 
-// console.log(addTitle.value)
+
+settings.addEventListener("click", function(e){
+    
+    icons.forEach(icon => {
+        icon.classList.toggle("display_none")
+    })
+} )
 
 
 btn.addEventListener("click", function(e){
-    // console.log(addTitle.value)
-    // console.log(addDesc.value)
-    // console.log(mainTodos)
-    // console.log(addTitle.value.length)
+
+
+    let today = new Date()
+    console.log(today.toLocaleDateString("en-US", {day: "numeric", month: "long", year: "numeric"}))
+    let todaysDate = today.toLocaleDateString("en-US", {day: "numeric", month: "long", year: "numeric"})
+
+
 
     if(addTitle.value.length === 0){
         
         addTitle.style.border = 2 + "px solid red"
         
     }else {
-        if(addTitle.value.length > 10 || addDesc.value.length > 150 ){
+        if(addTitle.value.length > 15 || addDesc.value.length > 90 ){
             console.log("alooo")
-            addTitleShort = addTitle.value.substring(0,10) + "..."
-            // console.log(addTitle.attributes.title )
+           let addTitleShort = addTitle.value.substring(0,16) + " ..."
+           let addDescShort = addDesc.value.substring(0,91) + " ..."
+           console.log(addDescShort)
+            // todoHeader.setAttribute('title', addTitle.value)
 
-            mainTodos.insertAdjacentHTML("afterbegin", `<div class="todoblock sec">
-                                    <div class="icons">
-                                    <i id="check" class="fa-solid fa-clipboard-check"></i>
+            mainTodos.insertAdjacentHTML("afterbegin", `<div class="todoblock normal">
+                                    <div class="icons display_none">
+                                    <i id="check" class="fa-solid fa-clipboard-check check"></i>
                                 
-                                    <i id="delete" class="fa-solid fa-trash-can"></i>
-                                    <i id="time" class="fa-solid fa-clock"></i>
+                                    <i id="delete" class="fa-solid fa-trash-can delete"></i>
+                                    <i id="time" class="fa-solid fa-clock time"></i>
                                     </div>
                                 
-                                    <h2 class="todo_name">${addTitleShort}</h2>
-                                    <p class="todo_desc">${addDesc.value}</p>
-                                    <p class="created">${Date()}</p>
+                                    <h2 class="todo_name" title="${addTitle.value}">${addTitleShort}</h2>
+                                    <p class="todo_desc">${addDescShort}</p>
+                                    <p class="created">Created: ${todaysDate}</p>
                                 </div>`)
 
 
@@ -69,19 +88,33 @@ btn.addEventListener("click", function(e){
             
             addSection.classList.toggle("trans_add")
 
+
+
+
+
+
+
+            const todoblock = document.getElementsByClassName("todoblock")
+
+
+            const settings = document.querySelector("#settings")
+            icons.push(document.querySelector(".icons"))
+            const checks = document.getElementsByClassName("check")
+            const remove = document.querySelector(".delete")
+
            
         }else {
-            mainTodos.insertAdjacentHTML("afterbegin", `<div class="todoblock sec">
-            <div class="icons">
-              <i id="check" class="fa-solid fa-clipboard-check"></i>
+            mainTodos.insertAdjacentHTML("afterbegin", `<div class="todoblock normal">
+            <div class="icons display_none">
+              <i id="check" class="fa-solid fa-clipboard-check check"></i>
         
-              <i id="delete" class="fa-solid fa-trash-can"></i>
-              <i id="time" class="fa-solid fa-clock"></i>
+              <i id="delete" class="fa-solid fa-trash-can delete"></i>
+              <i id="time" class="fa-solid fa-clock time"></i>
             </div>
         
             <h2 class="todo_name">${addTitle.value}</h2>
             <p class="todo_desc">${addDesc.value}</p>
-            <p class="created">${Date()}</p>
+            <p class="created">Created: ${todaysDate}</p>
           </div>`
         )
             addTitle.style.border = 2 + "px solid #FFF"
@@ -89,6 +122,19 @@ btn.addEventListener("click", function(e){
             addDesc.value = ""
             
             addSection.classList.toggle("trans_add")
+
+
+
+            const todoblock = document.getElementsByClassName("todoblock")
+
+
+            const settings = document.querySelector("#settings")
+            icons.push(document.querySelector(".icons"))
+            console.log(icons)
+
+            const checks = document.getElementsByClassName("check")
+            const remove = document.querySelector(".delete")
+
         }
 
        

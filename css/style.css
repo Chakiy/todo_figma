@@ -9,14 +9,14 @@
 
 /* COLORS */
 
-.prim {
-  border: 2px solid #f7892f;
+.normal {
+  border: 2px solid #d9c9bd;
 
   /* background-color: ; */
 }
 
 .sec {
-  border: 2px solid #f76c6a;
+  border: 2px solid #f11714;
 
   /* background-color: #f76c6a; */
 }
@@ -154,17 +154,17 @@ body {
   right: 10px;
 }
 
-#delete,
-#time,
-#check {
+.delete,
+.time,
+.check {
   font-size: 0.8rem;
   color: rgb(71, 68, 68);
   margin-left: 5px;
 }
 
-#delete:hover,
-#time:hover,
-#check:hover {
+.delete:hover,
+.time:hover,
+.check:hover {
   color: rgb(41, 40, 40);
 }
 
@@ -262,3 +262,7 @@ input::placeholder {
 /* #title_add {
     border: 2px solid red;
     } */
+
+.display_none {
+  display: none;
+}
